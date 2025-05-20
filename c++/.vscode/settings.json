@@ -1,0 +1,8 @@
+{
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
+    "notebook.output.minimalErrorRendering": false,
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
