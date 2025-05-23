@@ -5,7 +5,7 @@ int main(){
     int *p = arr;
     for (int i=0; i<5; i++){
         cout<<*(p+i)<<" ";
-        cout<<arr[i];
+        
         cout<<p<<endl;
 
     }

@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//    *** to access element of nested arraay *** 
+
 int main() {
     int arr[3][4] = {0, 1, 2, 3,11, 12, 13, 14,21,22,23,25};      //[3][4] is lenght
         

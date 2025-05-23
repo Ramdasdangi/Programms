@@ -6,7 +6,7 @@ using namespace std;
 
 
 /*
-//           *  changing a element in array  -  and out by for loop  *
+//           *  changing a element in array  -  and output by for loop  *
 
 int main (){
     string name[2]={"rmaa", "shyam"};
@@ -25,6 +25,9 @@ int main (){
     return 0;
 }*/
 
+
+
+
 /*
 //          *      array using a "for-each loop"         *
 
@@ -37,7 +40,10 @@ int main(){
     return 0; 
 }*/
 
-//                    *   input by user     *
+
+
+
+//                    *   programm to  user input      *
 int main (){
     string name [5];
     cout <<" Enter name of persons : \n";

@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+//   ** Queue programm  " first in first out "  **
+
 class Queue {
 private:
     static const int size = 100;

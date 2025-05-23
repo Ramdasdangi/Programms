@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//   ** reversing user input array or default array **
+
 void reverseArr(int *arr , int n){
     int *left = arr;
     int *right = arr+n-1;
@@ -19,7 +21,7 @@ int main(){
     int arr[n];
     cout<<"\n enter array : ";
     for(int i=0; i<n ; i++){
-        cin>>arr[i];
+        cin>>arr[i];cha
     }
     reverseArr(arr,n);
     */
@@ -29,7 +31,7 @@ int main(){
     reverseArr(arr,n);*/
 
     int arr[]= {1,2,3,4,5};
-    int n= sizeof(arr)/sizeof(arr[1]);
+    int n= sizeof(arr)/sizeof(arr[0]);
     reverseArr(arr,n);
 
     for(int i=0 ; i<n; i++){
