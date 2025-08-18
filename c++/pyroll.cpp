@@ -37,11 +37,11 @@ int main(){
 
    int choice;
    do{
-      cout << "\n===== Payroll Management System =====\n";
+      cout << "\n===-----=== Payroll Management System ===-----===\n";
         cout << "1. Add Employee\n";
         cout << "2. Display All Employees\n";
         cout << "3. Search Employee by ID\n";
-        cout << "4. Update Employee Salary\n";
+        cout << "4. Update Employee designation/Salary\n";
         cout << "5. Delete Employee\n";
         cout << "6. Sort Employees\n";
         cout << "0. Exit\n";
@@ -72,7 +72,7 @@ bool adminlogin(){
     string pass;
     cout<<"enter admin password : ";
     cin>>pass;
-    return(pass=="admin123");
+    return(pass=="123");
 
 }
 
@@ -85,6 +85,8 @@ void addemp(){
     cin.ignore();
     cout << "Enter Employee Name: ";
     cin.getline(e.name, 50);
+    cout<<"Enter designation : ";
+    cin.getline(e.desi,50);
     cout << "Enter Basic Pay: ";
     cin >> e.basicpay;
     cout << "Enter Allowances: ";
@@ -110,12 +112,14 @@ void dis() {
     }
 
     cout << "\n" << setw(5) << "ID" << setw(20) << "Name"
+         << setw(20) <<"designation"
          << setw(12) << "Basic" << setw(12) << "Allowances"
          << setw(12) << "Deductions" << setw(12) << "Net Pay\n";
     cout << string(80, '-') << endl;
 
     while (inFile.read((char*)&e, sizeof(e))) {
         cout << setw(5) << e.id << setw(20) << e.name
+             <<setw(20) << e.desi
              << setw(12) << e.basicpay << setw(12) << e.al
              << setw(12) << e.ded << setw(12) << e.salary << endl;
     }
@@ -136,6 +140,7 @@ void searchemp() {
         if (e.id == searchID) {
             cout << "\nEmployee Found!\n";
             cout << "ID: " << e.id << "\nName: " << e.name
+                 <<"\nDesignation: "<<e.desi
                  << "\nBasic Pay: " << e.basicpay
                  << "\nAllowances: " << e.al
                  << "\nDeductions: " << e.ded
@@ -153,7 +158,7 @@ void searchemp() {
 // ===== UPDATE SALARY =====
 void update() {
     int searchID;
-    cout << "Enter Employee ID to update salary: ";
+    cout << "Enter Employee ID to update : ";
     cin >> searchID;
 
     fstream file("payroll.dat", ios::binary | ios::in | ios::out);
@@ -162,6 +167,25 @@ void update() {
 
     while (file.read((char*)&e, sizeof(e))) {
         if (e.id == searchID) {
+            cout<<"Name of employee : "<<e.name<<endl;
+            int u;
+            cout<<"what you want update 'designation/salary' : \n";
+            cout<<"for designation  (' 1 ') \n for salary (' 2 ')\n";
+            cin>>u;
+
+            if(u==1){
+                cout<<"current designation : "<<e.desi<<endl;
+                cout<<"enter new designation : ";
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clear input buffer
+                cin.getline(e.desi, 50);
+                file.seekp(-static_cast<std::streamoff>(sizeof(e)), ios::cur);
+                file.write((char*)&e, sizeof(e));
+                cout<<"updated successfully!!\n";
+                found=true;
+                break;
+
+            }
+            else if(u==2){
             cout << "Current Net Pay: " << e.salary << endl;
             cout << "Enter New Basic Pay: ";
             cin >> e.basicpay;
@@ -177,7 +201,10 @@ void update() {
 
             cout << "Salary updated successfully!\n";
             found = true;
-            break;
+            break;}
+            else{
+                cout<<"choose any one out of two designation or salary ::\n";
+            }
         }
     }
     if (!found) cout << "Employee not found!\n";
@@ -243,13 +270,13 @@ void sortemp() {
     }
 
     cout << "\nSorted Employee List:\n";
-    cout << setw(5) << "ID" << setw(20) << "Name"
+    cout << setw(5) << "ID" << setw(20) << "Name"<<setw(20)<<"designation"
          << setw(12) << "Basic" << setw(12) << "Allowances"
          << setw(12) << "Deductions" << setw(12) << "Net Pay\n";
     cout << string(80, '-') << endl;
 
     for (auto &e : employees) {
-        cout << setw(5) << e.id << setw(20) << e.name
+        cout << setw(5) << e.id << setw(20) << e.name<<setw(20)<<e.desi
              << setw(12) << e.basicpay << setw(12) << e.al
              << setw(12) << e.ded << setw(12) << e.salary << endl;
     }
