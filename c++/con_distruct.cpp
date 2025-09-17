@@ -16,7 +16,7 @@ class Student{
         marks=0;
     }
 
-   /* void set_id(){
+    void set_id(){
         cout<<"enter stu id : ";
         cin>>id;
     }
@@ -27,26 +27,27 @@ class Student{
     void set_marks(){
         cout<<"enter stu marks : ";
         cin>>marks;
-    }*/
+    }
 
     void display(){
+        cout<<string(50 , '-')<<endl;
         cout<<"you enter following values : \n";
         cout<<"id : "<<id<<endl;
         cout<<"name : "<<name<<endl;
         cout<<"marks : "<<marks<<endl;
     }
     ~ Student(){
-
+        cout<<"programm is over : ";
     }};
 
 
-/*int main(){
-    Student st;
-    st.set_id();
-    st.set_name();
-    st.set_marks();
-    st.display();
-}*/
+// int main(){
+//     Student st;
+//     st.set_id();
+//     st.set_name();
+//     st.set_marks();
+//     st.display();
+// }
 
 
 int main(){

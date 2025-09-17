@@ -111,18 +111,19 @@ void dis() {
         return;
     }
 
-    cout << "\n" << setw(5) << "ID" << setw(20) << "Name"
-         << setw(20) <<"designation"
-         << setw(12) << "Basic" << setw(12) << "Allowances"
-         << setw(12) << "Deductions" << setw(12) << "Net Pay\n";
-    cout << string(80, '-') << endl;
+    cout << "\n" <<left<< setw(5) << "ID" <<left<< setw(20) << "Name"
+         <<left<< setw(20) <<"designation"
+         <<left<< setw(12) << "Basic" <<left<< setw(16) << "Allowances"
+         <<left<< setw(16) << "Deductions" <<left<< setw(12) << "Net Pay"<<endl;
+     cout << string(110, '-') << endl;
 
     while (inFile.read((char*)&e, sizeof(e))) {
-        cout << setw(5) << e.id << setw(20) << e.name
-             <<setw(20) << e.desi
-             << setw(12) << e.basicpay << setw(12) << e.al
-             << setw(12) << e.ded << setw(12) << e.salary << endl;
+        cout <<left<< setw(5) << e.id <<left<< setw(20) << e.name
+             <<left<< setw(20) << e.desi
+             << left<< setw(12) << e.basicpay <<left<< setw(16) << e.al
+             <<left<< setw(16) << e.ded <<left<< setw(12) << e.salary << endl;
     }
+     cout << string(110, '-') << endl<<endl;
     inFile.close();
 }
 
@@ -155,7 +156,7 @@ void searchemp() {
 }
 
 
-// ===== UPDATE SALARY =====
+// ===== UPDATE 2 =====
 void update() {
     int searchID;
     cout << "Enter Employee ID to update : ";
@@ -196,7 +197,8 @@ void update() {
 
             e.salary = calcNet(e.basicpay, e.al, e.ded);
 
-            file.seekp(-sizeof(e), ios::cur);
+            //file.seekp(-sizeof(e), ios::cur);
+            file.seekp(-static_cast<std::streamoff>(sizeof(e)), ios::cur);
             file.write((char*)&e, sizeof(e));
 
             cout << "Salary updated successfully!\n";

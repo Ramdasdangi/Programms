@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//     **** programm using stuction ****
+//     **** programm using struction ****
 
 struct employee{
     char name [50];

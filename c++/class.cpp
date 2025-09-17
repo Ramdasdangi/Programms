@@ -8,11 +8,11 @@ using namespace std;
         int d,e;
         void setData(int a1,int b1,int c1); //Declaration
         void getData(){
-            cout<<"a is"<<a<<endl;
-            cout<<"b is"<<b<<endl;
-            cout<<"c is"<<c<<endl;
-            cout<<"d is"<<d<<endl;
-            cout<<"e is"<<e<<endl;
+            cout<<"a is "<<a<<endl;
+            cout<<"b is "<<b<<endl;
+            cout<<"c is "<<c<<endl;
+            cout<<"d is "<<d<<endl;
+            cout<<"e is "<<e<<endl;
         }
     };
 void emp :: setData(int a1,int b1,int c1) {

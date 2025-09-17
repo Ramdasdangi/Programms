@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
 int main() {
-    for (int i=0; i<10 ; i++)
+    for (int i=0; i<15 ; i++)
         if (i<5 ) {
             cout<<i<<endl;
+            
         }
         else if(i>4 && i<6) {
             continue;
