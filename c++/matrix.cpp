@@ -74,5 +74,5 @@ int main(){
             }
         }
     }
-    cout<<"sum of diogonal elemet is "<<d_sum;
+    cout<<"sum of diagonal elemet is "<<d_sum;
 }

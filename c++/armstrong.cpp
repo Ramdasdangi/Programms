@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(){
-    int num , original , remainder , result=0 , n=0;
+    int num , original , remainder ,  n=0;
+    double result=0 ;
     cout<<"which number :  ";
     cin>>num;
      original=num;
@@ -21,10 +22,10 @@ int main(){
         temp /= 10;
      }
      if (result == original){
-        cout<<original<<"is an armstrong num \n";
+        cout<<original<<" is an armstrong num \n";
      }
      else {
-        cout<<original<<"is not armstrong num \n";
+        cout<<original<<" is not armstrong num \n";
      }
      return 0;
 }
