@@ -3,6 +3,26 @@
     "notebook.output.minimalErrorRendering": false,
     "files.associations": {
         "iostream": "cpp",
-        "ostream": "cpp"
-    }
+        "ostream": "cpp",
+        "thread": "cpp",
+        "iosfwd": "cpp",
+        "random": "cpp"
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 100,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": " MySQL Local",
+            "database": "project",
+            "username": "root",
+            "password": "Ram123",
+            "connectionTimeout": 50
+        }
+    ]
 }
