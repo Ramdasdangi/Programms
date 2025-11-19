@@ -6,7 +6,8 @@
         "ostream": "cpp",
         "thread": "cpp",
         "iosfwd": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "valarray": "cpp"
     },
     "sqltools.connections": [
         {
