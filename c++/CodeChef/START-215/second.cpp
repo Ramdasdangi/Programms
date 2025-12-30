@@ -1,4 +1,21 @@
-#include <iostream>
+/*# cook your dish here
+# cook your dish here
+t = int(input())
+for _ in range(t):
+    res = 0
+    arr = list(map(int, input().split()))
+    # print(arr)
+    arr.sort()
+    # print(arr)
+    res
+    for i in range(arr[0]):
+        res = res+10
+    res = res+(arr[1]-arr[0]+arr[2]-arr[0])*3
+    print(res)
+
+*/
+
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -46,18 +63,3 @@ int main() {
         
     }
 }
-/*
-# cook your dish here
-t = int(input())
-for _ in range(t):
-    res = 0
-    arr = list(map(int, input().split()))
-    # print(arr)
-    arr.sort()
-    # print(arr)
-    res
-    for i in range(arr[0]):
-        res = res+10
-    res = res+(arr[1]-arr[0]+arr[2]-arr[0])*3
-    print(res)
-    */
